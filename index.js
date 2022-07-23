@@ -13,7 +13,16 @@ let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
 let playerEl = document.getElementById("player-el");
 
-playerEl.textContent = player.name + ": $" + player.chips;
+playerEl.textContent;
+
+function chips() {
+  playerEl.textContent = player.name + ": $" + player.chips;
+  if (sum === 21) {
+    player.chips += 20;
+  } else {
+    player.chips += -5;
+  }
+}
 
 function getRandomCard() {
   let randomNumber = Math.floor(Math.random() * 13) + 1;
@@ -33,6 +42,7 @@ function startGame() {
   cards = [firstCard, secondCard];
   sum = firstCard + secondCard;
   renderGame();
+  chips();
 }
 
 function renderGame() {
